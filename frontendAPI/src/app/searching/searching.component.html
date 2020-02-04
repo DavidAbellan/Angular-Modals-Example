@@ -1,0 +1,59 @@
+<div *ngIf="data==null ">
+        <button type="button" (click)="clickNew()"  class="btn btn-info">Nuevo...</button>
+        <div *ngIf = "newForm">
+                <app-radio-button-menu></app-radio-button-menu>
+        </div>
+</div>
+
+
+<div *ngIf="data">
+
+<ul class="list-group">
+    <div  *ngFor="let field of data">
+         <div *ngIf ="field.startDate && field.type == undefined">
+
+              <li class="list-group-item">
+                  <h1>{{field.name}}</h1>
+                   <p>{{field.description}}</p> 
+                   <button type="button"  (click)="addEmployee(field.id)"class="btn btn-light" title="Añadir Empleado a Proyecto"> <i class="material-icons">group_add</i></button>
+                   <button type="button"  (click)="addSkillToProject(field.id)" class="btn btn-light" title="Añadir Tecnología a Proyecto"> <i class="material-icons">exposure_plus_1</i></button>
+
+                </li>
+         </div>
+        <div *ngIf ="field.surname ">
+
+             <li class="list-group-item">
+              <h1>{{field.name}} {{field.surname}}</h1>
+              <p>{{field.email}}</p> 
+              <button type="button" (click)="modify(field.id)" class="btn btn-light" title="Modificar datos"> <i class="material-icons">border_color</i></button>
+              <button type="button"  (click)="addToProject(field.id)"class="btn btn-light" title="Añadir a Proyecto"> <i class="material-icons">group_add</i></button>
+              <button type="button"  (click)="addSkill(field.id)" class="btn btn-light" title="Añadir Tecnología"> <i class="material-icons">exposure_plus_1</i></button>
+              <button type="button" class="btn btn-light" title="Ausencias"> <i class="material-icons">report</i></button>
+
+            </li>
+        </div>
+        <div *ngIf ="field.name  && field.surname == undefined && field.startDate == undefined">
+
+                <li class="list-group-item">
+                 <h1>{{field.name}}</h1>
+                 <p>{{field.description}}</p> 
+                 <button type="button"   class="btn btn-light" title="Editar"> <i class="material-icons">border_color</i></button>
+                 <button type="button" (click)="addEmployeeToSkill(field.id)" class="btn btn-light" title="Añadir empleado"> <i class="material-icons">group_add</i></button>
+                 <button type="button" (click)="checkEmployeesSkill(field.id)" class="btn btn-light" title="Ver empleados"> <i class="material-icons">person </i></button>
+
+                 
+                </li>
+       </div>
+       <div *ngIf ="field.type ">
+
+            <li class="list-group-item">
+             <h1>{{field.type}}</h1>
+             <p>{{field.description}}</p>
+             <p>{{field.employeeid | getEmployeeById | async}}</p>
+           </li>
+   </div>
+
+    </div>
+</ul>
+
+</div>  

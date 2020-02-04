@@ -1,0 +1,44 @@
+<div class="card" style="width: 18rem;">
+    <h6>Empleados en el proyecto</h6>
+    <ul class="list-group list-group-flush">
+        <div   *ngFor="let emp of employeesInProject">
+        <div >
+            <li class="list-group-item" style="display: flex; flex-flow: row nowrap;margin-right:2em !important">
+                
+                   <p> {{emp.idEmployee | getEmployeeById | async}} </p>
+                   
+                   <button type="button" (click)="deleteFromProject(emp.idEmployee)" class="btn btn-light" title="Quitar empleado"> <i class="material-icons">highlight_off</i></button>
+
+                
+            </li>
+
+                </div> 
+          </div>
+    </ul>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="card" style="width: 18rem;">
+    <ul class="list-group list-group-flush">
+        <div   *ngFor="let employee of employees">
+        <div >
+            <li class="list-group-item" style="display: flex; flex-flow: row nowrap;margin-right:2em !important">
+                
+                   <p> {{employee.name}} </p>
+                   <p>{{employee.surname}}</p>
+                   <button type="button" (click)="addToProject(employee.id)" class="btn btn-light" title="Añadir"> <i class="material-icons">done</i></button>
+
+                
+            </li>
+
+                </div> 
+          </div>
+    </ul>
+</div>

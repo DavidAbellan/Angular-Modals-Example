@@ -1,0 +1,16 @@
+<div class="card" style="width: 18rem;">
+    <ul class="list-group list-group-flush">
+        <div   *ngFor="let employee of employees">
+        <div >
+            <li class="list-group-item" style="display: flex; flex-flow: row nowrap;margin-right:2em !important">
+                
+                   <p> {{employee.name}} {{employee.surname}}  </p>
+                   <button type="button" (click)="addToSkill(employee.id)" class="btn btn-light" title="Añadir"> <i class="material-icons">done</i></button>
+
+                
+            </li>
+
+                </div> 
+          </div>
+    </ul>
+</div>

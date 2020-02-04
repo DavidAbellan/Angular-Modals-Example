@@ -1,0 +1,22 @@
+<div class="input-group">
+    <div class="input-group-prepend">
+      <div class="input-group-text">
+        <input type="radio" (click) ="chooseOptionForm($event)" name="loadnew" value="empleado"  aria-label="Radio button for following text input">Empleado
+        <input type="radio" (click) ="chooseOptionForm($event)" name="loadnew" value="proyecto" aria-label="Radio button for following text input">Proyecto
+        <input type="radio" (click) ="chooseOptionForm($event)" name="loadnew"  value="tecnologia" aria-label="Radio button for following text input">Tecnología
+
+
+      </div>
+    </div>
+  </div>
+    
+      <div *ngIf="empleadoForm">
+          <app-new-user></app-new-user>
+      </div>
+      <div *ngIf="proyectoForm">
+          <app-new-project></app-new-project>
+      </div>
+      <div *ngIf="tecnologiaForm">
+        <app-newskill></app-newskill>
+    </div>
+      

@@ -1,0 +1,16 @@
+<div class="card" style="width: 18rem;">
+    <ul class="list-group list-group-flush">
+        <div   *ngFor="let project of projects">
+        <div >
+            <li class="list-group-item" style="display: flex; flex-flow: row nowrap;margin-right:2em !important">
+                
+                   <p> {{project.name}} </p>
+                   <button type="button" (click)="addToProject(project.id)" class="btn btn-light" title="Añadir"> <i class="material-icons">done</i></button>
+
+                
+            </li>
+
+                </div> 
+          </div>
+    </ul>
+</div>

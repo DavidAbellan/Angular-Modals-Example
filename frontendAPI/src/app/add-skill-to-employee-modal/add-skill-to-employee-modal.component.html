@@ -1,0 +1,41 @@
+<div class="card" style="width: 18rem;">
+    <ul class="list-group list-group-flush">
+        <div   *ngFor="let skill of employeeSkills">
+        <div >
+            <li class="list-group-item" style="display: flex; flex-flow: row nowrap;margin-right:2em !important">
+                
+                   <p> {{skill.name}} </p>
+                   <button type="button" (click)="deleteSkill(skill.id)" class="btn btn-light" title="Borrar"> <i class="material-icons">cancel</i></button>
+
+                
+            </li>
+
+                </div> 
+          </div>
+    </ul>
+</div>
+
+
+
+<p>-----------------</p>
+
+
+
+
+
+<div class="card" style="width: 18rem;">
+    <ul class="list-group list-group-flush">
+        <div   *ngFor="let skill of skills">
+        <div >
+            <li class="list-group-item" style="display: flex; flex-flow: row nowrap;margin-right:2em !important">
+                
+                   <p> {{skill.name}} </p>
+                   <button type="button" (click)="addSkill(skill.id)" class="btn btn-light" title="Añadir"> <i class="material-icons">done</i></button>
+
+                
+            </li>
+
+                </div> 
+          </div>
+    </ul>
+</div>
